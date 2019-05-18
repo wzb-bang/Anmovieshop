@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DC143C</color>
+    <color name="colorPrimaryDark">#DC143C</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBig">#333333</color>
+    <color name="colorSmall">#666666</color>
+    <color name="colorMid">#999999</color>
+    <color name="colorBlue">#1296db</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhite_">#99eeeeee</color>
+    <color name="colorGary">#aaaaaa</color>
+    <color name="colorBg">#eeeeee</color>
+    <color name="colorBg2">#cccccc</color>
+    <color name="colorYellow">#EEAA00</color>
+    <color name="colorGray1">#999999</color>
+    <color name="colorGray2">#555555</color>
+    <color name="cp_alpha_gray">#CC646464</color>
+</resources>
