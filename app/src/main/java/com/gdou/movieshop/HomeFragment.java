@@ -23,6 +23,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -30,9 +31,10 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
         Bundle bundle = getArguments();
-        String agrs1 = bundle.getString("agrs1");
-        TextView tv = (TextView)view.findViewById(R.id.container);
-        tv.setText(agrs1);
+//        String agrs1 = bundle.getString("agrs1");
+//        TextView tv = (TextView)view.findViewById(R.id.container);
+//        tv.setText(agrs1);
+
         return view;
     }
 }
