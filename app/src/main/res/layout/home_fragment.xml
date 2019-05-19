@@ -123,7 +123,7 @@
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/tv_city"
+                    android:id="@+id/bn_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -140,7 +140,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_toEndOf="@id/tv_city"
+                    android:layout_toEndOf="@id/bn_login"
                     android:background="@drawable/search_bg_white">
 
                     <ImageView

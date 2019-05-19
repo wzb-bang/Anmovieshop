@@ -3,6 +3,9 @@ package com.gdou.movieshop;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,6 +50,26 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
         bt_back = (Button) findViewById(R.id.bt_back);
         bt_back.setOnClickListener(this);
 
+        et_phone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (et_phone.getText().toString().trim().length() == 11) {
+                    bt_register.setEnabled(true);
+                } else {
+                    bt_register.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
@@ -58,6 +81,7 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             case R.id.bt_back:
                 Intent intent = new Intent(registerActivity.this, LoginActivity.class);
                 startActivity(intent);
+                break;
             case R.id.bt_register:
 
                 StringBuilder stringBuilder = new StringBuilder();

@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         et_psd = (EditText) findViewById(R.id.et_psd);
 
         register=findViewById(R.id.register);
+        register.setOnClickListener(this);
         iv_clear = (ImageView) findViewById(R.id.iv_clear);
         iv_clear.setOnClickListener(this);
         bt_login = (Button) findViewById(R.id.bt_login);
@@ -99,45 +100,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.register:
                 Intent intent=new Intent(LoginActivity.this,registerActivity.class);
                 startActivity(intent);
+                break;
             case R.id.bt_login:
-                /*
-                 StringBuilder stringBuilder = new StringBuilder();
-                BufferedReader buffer = null;
-                HttpURLConnection connPOST = null;
-                String str="http://192.168.1.104:8080/example6_war_exploded/LoginServlet";
-                String param = "username=" + et_userid + "&" + "password=" + et_psd; //设置参数
-                try{
-                    URL url = new URL(str);
-                    connPOST = (HttpURLConnection) url.openConnection();
-                    connPOST.setConnectTimeout(5000);
-                    connPOST.setRequestMethod("POST");
-                    connPOST.setUseCaches(false);
-
-                    // 发送POST请求必须设置如下两行
-                    connPOST.setDoOutput(true);
-                    connPOST.setDoInput(true);
-
-                    //----------发送数据--------
-                    PrintWriter printWriter = new PrintWriter(connPOST.getOutputStream());
-                    printWriter.write(param); // 发送请求参数
-                    printWriter.flush();
-                    stringBuilder.setLength(0);
-                    //----------接收数据--------
-                    buffer = new BufferedReader(new InputStreamReader(connPOST.getInputStream()));
-                    for (String s = buffer.readLine(); s != null; s = buffer.readLine()) {
-                        stringBuilder.append(s);
-                    }
-                    Toast.makeText(getApplicationContext(),stringBuilder,Toast.LENGTH_LONG).show();
-                    buffer.close();
-
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "response err....." + e.toString(), Toast.LENGTH_LONG).show();
-                }
-
-                 */
-
                 //-------------Volley链接------------
                 //创建请求队列
                 RequestQueue mQueue = Volley.newRequestQueue(LoginActivity.this);
@@ -184,7 +148,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 mQueue.add(stringRequest);
                     finish();
                     break;
-
         }
     }
 
