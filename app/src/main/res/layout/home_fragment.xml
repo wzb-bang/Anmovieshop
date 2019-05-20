@@ -10,10 +10,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/hot_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_marginBottom="180dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/hot1" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/hot2" />
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/hot3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/hot_layout"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="-180dp">
+            <Button
+                android:id="@+id/btn_buy1"
+                android:text="购票"
+                android:layout_marginStart="10dp"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"/>
+            <Button
+                android:id="@+id/btn_buy2"
+                android:text="购票"
+                android:layout_marginStart="10dp"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"/>
+            <Button
+                android:id="@+id/btn_buy3"
+                android:text="购票"
+                android:layout_marginStart="10dp"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"/>
+        </LinearLayout>
+
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/os_scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
             android:scrollbars="none">
 
             <RelativeLayout
@@ -25,20 +93,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="168dp" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="189dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="69dp"
+                    android:layout_marginEnd="0dp"
+                    android:src="@drawable/banner1"></ImageView>
+
                 <RelativeLayout
                     android:id="@+id/rl_hot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rl_banner"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="63dp"
                     android:background="#ffffff">
 
                     <TextView
                         android:id="@+id/tv_hotMovie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:text="正在热映"
                         android:textColor="@color/colorBig"
                         android:textSize="16sp"
@@ -49,61 +131,59 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginRight="12dp"
                         android:layout_marginTop="13dp"
+                        android:layout_marginRight="12dp"
                         android:text="全部 >" />
 
                     <!--<android.support.v7.widget.RecyclerView-->
-                        <!--android:id="@+id/rl_movie"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_below="@id/tv_hotMovie"-->
-                        <!--android:layout_marginStart="12dp" />-->
+                    <!--android:id="@+id/rl_movie"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/tv_hotMovie"-->
+                    <!--android:layout_marginStart="12dp" />-->
 
                 </RelativeLayout>
-
-                <ViewFlipper
-                    android:id="@+id/vf_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_below="@id/rl_hot"
-                    android:autoStart="true"
-                    android:flipInterval="5000"
-                    android:inAnimation="@anim/anim_in"
-                    android:outAnimation="@anim/anim_out" />
+                <!--<ViewFlipper-->
+                <!--android:id="@+id/vf_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_below="@id/rl_hot"-->
+                <!--android:autoStart="true"-->
+                <!--android:flipInterval="5000"-->
+                <!--android:outAnimation="@anim/anim_out" />-->
 
                 <!--<android.support.v7.widget.RecyclerView-->
-                    <!--android:id="@+id/rl_news"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@id/vf_view"-->
-                    <!--android:background="@color/colorWhite" />-->
+                <!--android:id="@+id/rl_news"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/vf_view"-->
+                <!--android:background="@color/colorWhite" />-->
 
                 <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_nomore"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@id/rl_news"-->
-                    <!--android:background="@color/colorBg"-->
-                    <!--android:gravity="center"-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:visibility="gone">-->
+                <!--android:id="@+id/ll_nomore"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/rl_news"-->
+                <!--android:background="@color/colorBg"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:visibility="gone">-->
 
-                    <!--<ImageView-->
-                        <!--android:layout_width="42dp"-->
-                        <!--android:layout_height="42dp"-->
-                        <!--android:layout_marginBottom="5dp"-->
-                        <!--android:layout_marginTop="5dp"-->
-                        <!--android:src="@drawable/icon_nomore"-->
-                        <!--android:contentDescription="TODO" />-->
+                <!--<ImageView-->
+                <!--android:layout_width="42dp"-->
+                <!--android:layout_height="42dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:src="@drawable/icon_nomore"-->
+                <!--android:contentDescription="TODO" />-->
 
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginStart="10dp"-->
-                        <!--android:text="我是有底线的"-->
-                        <!--android:textColor="#999999"-->
-                        <!--android:textStyle="bold" />-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:text="我是有底线的"-->
+                <!--android:textColor="#999999"-->
+                <!--android:textStyle="bold" />-->
 
                 <!--</LinearLayout>-->
 
@@ -173,5 +253,7 @@
 
 
     </RelativeLayout>
+
+
 
 </android.support.v4.widget.SwipeRefreshLayout>
