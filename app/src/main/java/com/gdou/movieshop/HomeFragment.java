@@ -21,6 +21,13 @@ public class HomeFragment extends Fragment {
     TextView textView;
     EditText findMovie;
     ImageView iv_find;
+    ImageView iv_AD;
+    ImageView iv_hot1;
+    ImageView iv_hot2;
+    ImageView iv_hot3;
+    Button btn_buy1;
+    Button btn_buy2;
+    Button btn_buy3;
     SharedPreferences sharedPreferences;
     public static HomeFragment newInstance(String param1) {
         HomeFragment fragment = new HomeFragment();
