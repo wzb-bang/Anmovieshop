@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     int lastSelectedPosition = 0;
     private String TAG = MainActivity.class.getSimpleName();
     private MyFragment mMyFragment;
-    private ScanFragment mScanFragment;
+    private MoviesFragment mScanFragment;
     private HomeFragment mHomeFragment;
 
     @Override
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                 break;
             case 1:
                 if (mScanFragment == null) {
-                    mScanFragment = ScanFragment.newInstance("扫一扫");
+                    mScanFragment = MoviesFragment.newInstance("扫一扫");
                 }
                 transaction.replace(R.id.tb, mScanFragment);
                 break;

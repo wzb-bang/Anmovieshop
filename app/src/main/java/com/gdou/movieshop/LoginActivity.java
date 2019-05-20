@@ -1,5 +1,6 @@
 package com.gdou.movieshop;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
@@ -18,7 +19,6 @@ import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         initView();
-        System.out.println("一开始"+et_userid);
     }
 
     private void initView() {
@@ -128,10 +127,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         //创建sharedPreferences对象,并保存用户登录状态、用户名、用户id
                                         SharedPreferences sharedPreferences =LoginActivity.this.getSharedPreferences("Login",MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                                        editor.putString("username",(String)response.get("username"));
-                                        editor.putString("userId",(String)response.get("userId"));
+                                        editor.putString("user_name",(String)response.get("user_name"));
+                                        editor.putString("user_id",(String)response.get("user_id"));
                                         editor.putInt("status",(int)response.get("status"));
                                         editor.apply();
+
                                         Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                                         startActivity(intent);
                                     }
@@ -150,7 +150,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
                         JSONObject  jsonObject;
                         try {
-                            //String jsonString = new String(response.data, "utf-8");
                             jsonObject = new JSONObject(new String(response.data,"UTF-8"));
                             return Response.success(jsonObject, HttpHeaderParser.parseCacheHeaders(response));
                         } catch (UnsupportedEncodingException e) {
