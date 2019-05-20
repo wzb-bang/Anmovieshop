@@ -140,7 +140,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_toEndOf="@id/bn_login"
+                    android:layout_toEndOf="@id/tv_login"
                     android:background="@drawable/search_bg_white">
 
                     <ImageView
