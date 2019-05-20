@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
 //        String agrs1 = bundle.getString("agrs1");
 ////        TextView tv = (TextView)view.findViewById(R.id.container);
 ////        tv.setText(agrs1);
-        textView =view.findViewById(R.id.bn_login);
+        textView =view.findViewById(R.id.tv_login);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

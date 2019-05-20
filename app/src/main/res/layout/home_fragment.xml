@@ -123,7 +123,7 @@
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/bn_login"
+                    android:id="@+id/tv_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"

@@ -1,14 +1,14 @@
 package com.gdou.movieshop;
 
 import android.content.Intent;
-import android.os.CountDownTimer;
+
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
@@ -24,25 +23,28 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText et_userid;
-    private EditText et_psd;
-    private ImageView iv_clear;
-    private TextView register;
-    private Button bt_login;
+     EditText et_userid;
+     EditText et_psd;
+     ImageView iv_clear;
+     TextView register;
+     Button bt_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         initView();
+        System.out.println("一开始"+et_userid);
     }
 
     private void initView() {
@@ -106,12 +109,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 //创建请求队列
                 RequestQueue mQueue = Volley.newRequestQueue(LoginActivity.this);
                 //创建请求
-                StringRequest stringRequest=new StringRequest(Request.Method.POST,
-                        "http://192.168.1.101:8080/movieshop_war_exploded/loginServlet",
-                        new Response.Listener<String>() {      //volley监听器
-                            @Override
-                            public void onResponse(String response) {  //onResponse获取到服务器响应的值
+                //设置参数
+                Map<String,String> params=new HashMap<>();
+                params.put("user_id",et_userid.getText().toString());
+                params.put("user_password",et_psd.getText().toString());
+                JSONObject paramsJsonObject=new JSONObject(params);
 
+                JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(
+                        "http://192.168.1.104:8080/movieshop_war_exploded/loginServlet.action",paramsJsonObject,
+                        new Response.Listener<JSONObject >() {      //volley监听器
+                            @Override
+                            public void onResponse(JSONObject  response) {  //onResponse获取到服务器响应的值
+                                try {
+                                    //打印信息
+                                    Toast.makeText(getApplicationContext(),(String)response.get("msg"), Toast.LENGTH_LONG).show();
+                                    //登录成功
+                                    if(response.get("status").equals(200)){
+                                        //创建sharedPreferences对象,并保存用户登录状态、用户名、用户id
+                                        SharedPreferences sharedPreferences =LoginActivity.this.getSharedPreferences("Login",MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("username",(String)response.get("username"));
+                                        editor.putString("userId",(String)response.get("userId"));
+                                        editor.putInt("status",(int)response.get("status"));
+                                        editor.apply();
+                                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                                        startActivity(intent);
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         },
                         new Response.ErrorListener() {   //接受错误信息
@@ -120,22 +146,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Log.e("TAG", volleyError.getMessage(), volleyError);
                             }
                         }){
-                    //传输参数
                     @Override
-                    protected Map<String,String> getParams()throws AuthFailureError{
-                        Map<String,String>map=new HashMap<>();
-                        map.put("user_name",et_userid.toString());
-                        map.put("user_password",et_psd.toString());
-
-                        return map;
-                    }
-
-                    @Override
-                    protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                    protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
+                        JSONObject  jsonObject;
                         try {
-                            String jsonString = new String(response.data, "UTF-8");
-                            return Response.success(jsonString,
-                                    HttpHeaderParser.parseCacheHeaders(response));
+                            //String jsonString = new String(response.data, "utf-8");
+                            jsonObject = new JSONObject(new String(response.data,"UTF-8"));
+                            return Response.success(jsonObject, HttpHeaderParser.parseCacheHeaders(response));
                         } catch (UnsupportedEncodingException e) {
                             return Response.error(new ParseError(e));
                         } catch (Exception je) {
@@ -145,9 +162,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 };
                 //将创建的请求添加到请求队列中
-                mQueue.add(stringRequest);
-                    finish();
-                    break;
+                mQueue.add(jsonObjectRequest);
+                break;
         }
     }
 

@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by 武当山道士 on 2017/8/16.
- */
+
 
 public class MyFragment extends Fragment {
     public static MyFragment newInstance(String param1) {
