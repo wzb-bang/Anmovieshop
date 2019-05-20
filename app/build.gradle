@@ -30,6 +30,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
     implementation files('libs/volley.jar')
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 }
 //强制所有的第三方包使用指定版本的support包：
 configurations.all {

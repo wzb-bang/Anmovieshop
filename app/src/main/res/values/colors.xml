@@ -16,4 +16,5 @@
     <color name="colorGray1">#999999</color>
     <color name="colorGray2">#555555</color>
     <color name="cp_alpha_gray">#CC646464</color>
+    <color name="colorBlack">#000</color>
 </resources>

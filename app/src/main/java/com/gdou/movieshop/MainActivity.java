@@ -50,15 +50,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                  *  BACKGROUND_STYLE_RIPPLE: 波纹样式 点击有波纹效果
                  */
 
-                .setActiveColor("#FF107FFD") //选中颜色
-                .setInActiveColor("#e9e6e6") //未选中颜色
-                .setBarBackgroundColor("#1ccbae");//导航栏背景色
+                .setActiveColor("#DC143C") //选中颜色
+                .setInActiveColor("#999999") //未选中颜色
+                .setBarBackgroundColor("#eeeeee");//导航栏背景色
 
         /** 添加导航按钮 */
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "首页"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_scan, "扫一扫"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_my, "个人设置"))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_home, "首页"))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_movie, "电影"))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_me, "我的"))
                 .setFirstSelectedPosition(lastSelectedPosition )
                 .initialise(); //initialise 一定要放在 所有设置的最后一项
 
@@ -95,13 +95,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                 break;
             case 1:
                 if (mScanFragment == null) {
-                    mScanFragment = MoviesFragment.newInstance("扫一扫");
+                    mScanFragment = MoviesFragment.newInstance("电影");
                 }
                 transaction.replace(R.id.tb, mScanFragment);
                 break;
             case 2:
                 if (mMyFragment == null) {
-                    mMyFragment = MyFragment.newInstance("个人中心");
+                    mMyFragment = MyFragment.newInstance("我的");
                 }
                 transaction.replace(R.id.tb, mMyFragment);
                 break;
