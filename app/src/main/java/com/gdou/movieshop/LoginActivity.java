@@ -114,7 +114,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 JSONObject paramsJsonObject=new JSONObject(params);
 
                 JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(
-                        "http://192.168.1.104:8080/movieshop_war_exploded/loginServlet.action",paramsJsonObject,
+                        "http://192.168.1.103:8080/movieshop_war_exploded/User/loginServlet.action",paramsJsonObject,
                         new Response.Listener<JSONObject >() {      //volley监听器
                             @Override
                             public void onResponse(JSONObject  response) {  //onResponse获取到服务器响应的值

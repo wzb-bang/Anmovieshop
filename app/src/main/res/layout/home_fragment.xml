@@ -27,20 +27,19 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/hot1" />
+                />
 
             <ImageView
                 android:id="@+id/iv_hot2"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:src="@drawable/hot2" />
+                android:layout_marginStart="10dp" />
             <ImageView
                 android:id="@+id/iv_hot3"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/hot3" />
+                />
         </LinearLayout>
 
 
