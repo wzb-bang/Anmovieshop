@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     private MyFragment mMyFragment;
     private MoviesFragment mScanFragment;
     private HomeFragment mHomeFragment;
+    private BottomNavigationBar bottomBar;
     FragmentManager fm=getFragmentManager();
 
 
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         /**
          * bottomNavigation 设置
          */
@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     public void onTabReselected(int position) {
 
     }
-
+    public void setBottomBarSelection(int tabId) {
+        bottomNavigationBar.selectTab(tabId);
+    }
 }
 

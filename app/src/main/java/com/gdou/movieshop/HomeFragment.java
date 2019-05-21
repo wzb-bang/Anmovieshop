@@ -220,10 +220,12 @@ public class HomeFragment extends Fragment {
                 String name = findMovie.getText().toString();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("findMovie", name);
-                //跳转至电影列表
-                Intent intent = new Intent(getActivity(), findmovie.class);
-                //启动
-                startActivity(intent);
+//                //跳转至电影列表
+//                Intent intent = new Intent(getActivity(), findmovie.class);
+//                //启动
+//                startActivity(intent);
+                MainActivity activity = (MainActivity) getActivity();
+                activity.setBottomBarSelection(1);
             }
         });
 
