@@ -54,6 +54,7 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.ContactVi
                 holder.vButton.setOnClickListener(new MyOnClickListener(position,MovieInfoList.get(adapterPosition)));
             }
 
+//            holder.vImage.setImageDrawable(ci.getImage());
 //            holder.vButton.setId(ci.getBtIdPrefix()+ci.getBt_id());
         }
 
