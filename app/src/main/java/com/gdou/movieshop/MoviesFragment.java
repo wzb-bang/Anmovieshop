@@ -2,6 +2,7 @@ package com.gdou.movieshop;
 
 import android.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gdou.movieshop.adapter.MoviesAdapter;
 
@@ -22,6 +25,7 @@ public class MoviesFragment extends Fragment {
     //类成员
     private MoviesAdapter adapter;
     List<MovieInfo> mList = new ArrayList<>();
+
 
     public static MoviesFragment newInstance(String param1) {
         MoviesFragment fragment = new MoviesFragment();
@@ -45,6 +49,7 @@ public class MoviesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.movies_fragment, container, false);
+        Button card_btn_buy1 = (Button)view.findViewById(R.id.card_btn_buy1);
         Bundle bundle = getArguments();
         String agrs1 = bundle.getString("agrs1");
         TextView tv = (TextView)view.findViewById(R.id.container);
@@ -72,6 +77,18 @@ public class MoviesFragment extends Fragment {
         adapter = new MoviesAdapter(mList);
         //为RecyclerView对象mRecyclerView设置adapter
         mRecyclerView.setAdapter(adapter);
+
+//        //购票
+//        card_btn_buy1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // 给购票按钮添加点击响应事件
+//                Toast.makeText(getActivity(),"This is a Toast", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+//                //启动
+//                startActivity(intent);
+//            }
+//        });
         return view;
     }
     private void initInfo() {

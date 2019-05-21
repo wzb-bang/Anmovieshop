@@ -108,6 +108,7 @@
             android:textColor="@color/colorWhite"
             android:background="@drawable/shape"/>
         </LinearLayout>
+
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/os_scrollView"
             android:layout_width="match_parent"

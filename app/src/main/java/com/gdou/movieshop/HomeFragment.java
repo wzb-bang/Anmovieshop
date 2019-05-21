@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -201,6 +202,17 @@ public class HomeFragment extends Fragment {
 
 
         //---------------绑定监听器----------------
+        //购票
+        btn_buy1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 给购票按钮添加点击响应事件
+                Toast.makeText(getActivity(),"This is a Toast", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                //启动
+                startActivity(intent);
+            }
+        });
         //登录
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -220,14 +232,12 @@ public class HomeFragment extends Fragment {
                 String name = findMovie.getText().toString();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("findMovie", name);
-//                //跳转至电影列表
-//                Intent intent = new Intent(getActivity(), findmovie.class);
-//                //启动
-//                startActivity(intent);
                 MainActivity activity = (MainActivity) getActivity();
                 activity.setBottomBarSelection(1);
             }
         });
+
+
 
     }
 
