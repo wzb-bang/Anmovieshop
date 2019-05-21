@@ -22,7 +22,7 @@
             android:id="@+id/time"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:background="#eceff1"
+            android:background="@color/colorWhite"
             android:paddingLeft="5dp"
             android:text="时间"
             android:textColor="#000000"
@@ -32,7 +32,7 @@
             android:id="@+id/room"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:background="#eceff1"
+            android:background="@color/colorWhite"
             android:paddingLeft="5dp"
             android:text="大厅"
             android:gravity="center"
@@ -42,11 +42,11 @@
             android:id="@+id/price"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:background="#eceff1"
+            android:background="@color/colorWhite"
             android:paddingLeft="5dp"
             android:text="价格"
             android:gravity="center"
-            android:textColor="#000000"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp" />
 
         <Button

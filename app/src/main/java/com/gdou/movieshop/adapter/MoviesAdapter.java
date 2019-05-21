@@ -77,7 +77,7 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.ContactVi
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(v.getContext(),data., Toast.LENGTH_LONG).show();
+            Toast.makeText(v.getContext(),data.getMovie_name(), Toast.LENGTH_LONG).show();
 
         }
     }

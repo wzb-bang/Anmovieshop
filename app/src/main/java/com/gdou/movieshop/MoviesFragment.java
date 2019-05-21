@@ -1,5 +1,6 @@
 package com.gdou.movieshop;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
