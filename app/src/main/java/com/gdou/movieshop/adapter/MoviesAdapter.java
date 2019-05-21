@@ -44,7 +44,7 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.ContactVi
             holder.vName.setText(ci.getNamePrefix() + ci.getMovie_name());
             holder.vScore.setText(ci.getScorePrefix() +ci.getMovie_score());
             holder.vActor.setText(ci.getActorPrefix() + ci.getActor());
-            holder.vImage.setImageDrawable(ci.getImage());
+//            holder.vImage.setImageDrawable(ci.getImage());
 //            holder.vButton.setId(ci.getBtIdPrefix()+ci.getBt_id());
         }
 

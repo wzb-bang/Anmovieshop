@@ -4,22 +4,24 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.Button;
 
+import com.android.volley.toolbox.ImageLoader;
+
 public class MovieInfo {
     protected String movie_name = "大侦探皮卡丘";
     protected String movie_score = "6.7";
     protected String actor = " 瑞恩·雷诺兹 / 贾斯蒂斯·史密斯 / 凯瑟琳·纽顿";
     protected Drawable image;
+    protected ImageLoader.ImageListener imageloader;
 //    protected String bt_id;
     protected static final String NAME_PREFIX = "";
     protected static final String SCORE_PREFIX = "评分：";
     protected static final String ACTOR_PREFIX = "主演：";
 //    protected static final String BT_ID_PREFIX = "bt_";
 
-    public MovieInfo(String movie_name, String movie_score, String actor,Drawable image){
+    public MovieInfo(String movie_name, String movie_score, String actor){
         this.movie_name = movie_name;
         this.movie_score = movie_score;
         this.actor = actor;
-        this.image=image;
     }
 
 //    public String getBt_id() {
@@ -33,6 +35,15 @@ public class MovieInfo {
 //    public static String getBtIdPrefix() {
 //        return BT_ID_PREFIX;
 //    }
+
+
+    public ImageLoader.ImageListener getImageloader() {
+        return imageloader;
+    }
+
+    public void setImageloader(ImageLoader.ImageListener imageloader) {
+        this.imageloader = imageloader;
+    }
 
     public Drawable getImage() {
         return image;

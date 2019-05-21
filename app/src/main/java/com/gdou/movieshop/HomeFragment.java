@@ -55,6 +55,7 @@ public class HomeFragment extends Fragment {
     Button btn_buy1;
     Button btn_buy2;
     Button btn_buy3;
+    TextView tv_all;
     TextView tv_hotMovie;
     TextView hot_text1;
     TextView hot_text2;
@@ -117,6 +118,7 @@ public class HomeFragment extends Fragment {
         btn_buy1 = getView().findViewById(R.id.btn_buy1);
         btn_buy2 = getView().findViewById(R.id.btn_buy2);
         btn_buy3 = getView().findViewById(R.id.btn_buy3);
+        tv_all=getView().findViewById(R.id.tv_all);
         tv_hotMovie = getView().findViewById(R.id.tv_hotMovie);
         hot_text1 = getView().findViewById(R.id.hot_text1);
         hot_text2 = getView().findViewById(R.id.hot_text2);
@@ -131,7 +133,7 @@ public class HomeFragment extends Fragment {
         RequestQueue mQueue = Volley.newRequestQueue(getActivity());
         //创建请求
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                "http://192.168.1.103:8080/movieshop_war_exploded/LoadHomeView.action", null,
+                "http://192.168.1.103:8080/movieshop_war_exploded/User/LoadHomeView.action", null,
                 new Response.Listener<JSONObject>() {       //volley监听器
                     @Override
                     public void onResponse(JSONObject response) {  //onResponse获取到服务器响应的值
@@ -220,15 +222,21 @@ public class HomeFragment extends Fragment {
                 String name = findMovie.getText().toString();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("findMovie", name);
-//                //跳转至电影列表
-//                Intent intent = new Intent(getActivity(), findmovie.class);
-//                //启动
-//                startActivity(intent);
+                editor.apply();
+                //跳转至电影列表
                 MainActivity activity = (MainActivity) getActivity();
                 activity.setBottomBarSelection(1);
             }
         });
 
+        tv_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转至电影列表
+                MainActivity activity = (MainActivity) getActivity();
+                activity.setBottomBarSelection(1);
+            }
+        });
     }
 
 
