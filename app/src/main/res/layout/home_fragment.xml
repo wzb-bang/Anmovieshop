@@ -88,25 +88,25 @@
             android:text="购票"
             android:layout_marginStart="35dp"
             android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/shape"/>
             <Button
             android:id="@+id/btn_buy2"
             android:text="购票"
             android:layout_marginStart="60dp"
             android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/shape"/>
             <Button
             android:id="@+id/btn_buy3"
             android:text="购票"
             android:layout_marginStart="55dp"
             android:layout_width="70dp"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/shape"/>
         </LinearLayout>
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/os_scrollView"
