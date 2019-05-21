@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".registerActivity"></activity>
+        <activity android:name=".findmovie"></activity>
     </application>
 
 </manifest>

@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     private MyFragment mMyFragment;
     private MoviesFragment mScanFragment;
     private HomeFragment mHomeFragment;
+    FragmentManager fm=getFragmentManager();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +72,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
      * 设置默认导航栏
      */
     private void setDefaultFragment() {
-        FragmentManager fm = getFragmentManager();
+        fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         mHomeFragment = HomeFragment.newInstance("首页");
         transaction.replace(R.id.tb, mHomeFragment);
         transaction.commit();
+
+
+
     }
 
     /**
@@ -111,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         }
 
         transaction.commit();// 事务提交
+
+
     }
 
     /**
@@ -128,5 +135,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     public void onTabReselected(int position) {
 
     }
+
 }
 
