@@ -43,10 +43,49 @@
                 android:textSize="16dp" />
         </LinearLayout>
     </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/details_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/details_layout">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="时间"
+            android:textSize="20dp"
+            android:background="@color/colorWhite_"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="大厅"
+            android:textSize="20dp"
+            android:background="@color/colorWhite_"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="票价"
+            android:textSize="20dp"
+            android:background="@color/colorWhite_"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="购票"
+            android:textSize="20dp"
+            android:background="@color/colorWhite_"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"/>
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/details_layout"/>
+        android:layout_below="@id/details_title"/>
 </RelativeLayout>
 
