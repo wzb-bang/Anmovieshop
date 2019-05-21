@@ -49,7 +49,7 @@ public class MoviesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.movies_fragment, container, false);
-        Button card_btn_buy1 = (Button)view.findViewById(R.id.card_btn_buy1);
+//        Button card_btn_buy1 = getView().findViewById(R.id.card_btn_buy1);
         Bundle bundle = getArguments();
         String agrs1 = bundle.getString("agrs1");
         TextView tv = (TextView)view.findViewById(R.id.container);
@@ -78,17 +78,6 @@ public class MoviesFragment extends Fragment {
         //为RecyclerView对象mRecyclerView设置adapter
         mRecyclerView.setAdapter(adapter);
 
-//        //购票
-//        card_btn_buy1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // 给购票按钮添加点击响应事件
-//                Toast.makeText(getActivity(),"This is a Toast", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getActivity(), DetailsActivity.class);
-//                //启动
-//                startActivity(intent);
-//            }
-//        });
         return view;
     }
     private void initInfo() {
@@ -108,6 +97,15 @@ public class MoviesFragment extends Fragment {
         mList.add(element6);
 //        MovieInfo element7 = new MovieInfo("小明", "6.3", "feverdg@icloud.com");
 //        mList.add(element7);
+
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        initView();
+    }
+
+    private void initView() {
 
     }
 }
