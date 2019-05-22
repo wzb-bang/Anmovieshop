@@ -61,6 +61,7 @@ public class HomeFragment extends Fragment {
     TextView hot_text1;
     TextView hot_text2;
     TextView hot_text3;
+    String AD_id,hot1_id,hot2_id,hot3_id;
     HashMap<String, String> urlMap;
     HomeFragment fragment;
     SharedPreferences sharedPreferences;
@@ -142,13 +143,18 @@ public class HomeFragment extends Fragment {
                             //登录成功
                             if (response.get("status").equals(200)) {
                                 urlMap = new HashMap<>();
-                                urlMap.put("iv_AD", (String) response.get("Image_url0"));
-                                urlMap.put("iv_hot1", (String) response.get("Image_url1"));
-                                urlMap.put("iv_hot2", (String) response.get("Image_url2"));
-                                urlMap.put("iv_hot3", (String) response.get("Image_url3"));
-                                hot_text1.setText((String) response.get("Movie_name1"));
-                                hot_text2.setText((String) response.get("Movie_name2"));
-                                hot_text3.setText((String) response.get("Movie_name3"));
+
+                                urlMap.put("iv_AD",  response.getString("Image_url0"));
+                                urlMap.put("iv_hot1",  response.getString("Image_url1"));
+                                urlMap.put("iv_hot2",  response.getString("Image_url2"));
+                                urlMap.put("iv_hot3",  response.getString("Image_url3"));
+                                hot_text1.setText( response.getString("Movie_name1"));
+                                hot_text2.setText( response.getString("Movie_name2"));
+                                hot_text3.setText( response.getString("Movie_name3"));
+                                AD_id=response.getString("Movie_id0");
+                                hot1_id=response.getString("Movie_id1");
+                                hot2_id=response.getString("Movie_id2");
+                                hot3_id=response.getString("Movie_id3");
 
                             }
                         } catch (JSONException e) {
@@ -214,7 +220,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        //-------------以下均是添加监听, 可做简化
         //搜索图标添加监听
         iv_find.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -236,6 +242,44 @@ public class HomeFragment extends Fragment {
                 //跳转至电影列表
                 MainActivity activity = (MainActivity) getActivity();
                 activity.setBottomBarSelection(1);
+            }
+        });
+
+        iv_AD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转至电影列表
+                Intent intent =new Intent(getActivity(),DetailsActivity.class);
+                intent.putExtra("Movie_id",AD_id);
+                startActivity(intent);
+            }
+        });
+
+        btn_buy1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转至电影列表
+                Intent intent =new Intent(getActivity(),DetailsActivity.class);
+                intent.putExtra("Movie_id",hot1_id);
+                startActivity(intent);
+            }
+        });
+        btn_buy2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转至电影列表
+                Intent intent =new Intent(getActivity(),DetailsActivity.class);
+                intent.putExtra("Movie_id",hot2_id);
+                startActivity(intent);
+            }
+        });
+        btn_buy3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转至电影列表
+                Intent intent =new Intent(getActivity(),DetailsActivity.class);
+                intent.putExtra("Movie_id",hot3_id);
+                startActivity(intent);
             }
         });
     }

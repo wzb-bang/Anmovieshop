@@ -50,6 +50,7 @@
             android:textSize="20sp" />
 
         <Button
+            android:id="@+id/Movie_detail_buy"
             android:layout_width="70dp"
             android:layout_height="35dp"
             android:gravity="center"

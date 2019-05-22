@@ -105,31 +105,13 @@ public class MoviesFragment extends Fragment {
         //初始化mList
         getNetInfo();
         //实例化MyAdapter并传入mList对象
-        adapter = new MoviesAdapter(mList);
+        adapter = new MoviesAdapter(getActivity(),mList);
         //为RecyclerView对象mRecyclerView设置adapter
         mRecyclerView.setAdapter(adapter);
 
         return view;
     }
-    private void initInfo() {
-//
-////        测试数据
-//        MovieInfo element1 = new MovieInfo("大侦探皮卡丘", "6.7", "尼科尔·帕尔曼 / 亚历克斯·赫什 / 田尻智",getResources().getDrawable(R.drawable.hot1));
-//        mList.add(element1);
-//        MovieInfo element2 = new MovieInfo("一条狗的使命2", "6.9", " 丹尼斯·奎德 / 凯瑟琳·普雷斯科特 / 刘宪华",getResources().getDrawable(R.drawable.hot2));
-//        mList.add(element2);
-//        MovieInfo element3 = new MovieInfo("复仇者联盟4：终局之战", "8.6", "小罗伯特·唐尼 / 克里斯·埃文斯 ",getResources().getDrawable(R.drawable.hot3));
-//        mList.add(element3);
-//        MovieInfo element4 = new MovieInfo("何以为家", "9.0", " 赞恩·阿尔·拉菲亚 / 约丹诺斯·希费罗",getResources().getDrawable(R.drawable.hot4));
-//        mList.add(element4);
-//        MovieInfo element5 = new MovieInfo("一个母亲的复仇", "6.7", " 希里黛玉 / 阿克夏耶·坎纳 / 萨佳·阿里",getResources().getDrawable(R.drawable.hot5));
-//        mList.add(element5);
-//        MovieInfo element6 = new MovieInfo("双生", "3.6", "刘昊然 / 陈都灵 / 赵芮",getResources().getDrawable(R.drawable.hot6));
-//        mList.add(element6);
-////        MovieInfo element7 = new MovieInfo("小明", "6.3", "feverdg@icloud.com");
-////        mList.add(element7);
 
-    }
 
     public void getNetInfo(){
         //-------------Volley链接,向后台获取主界面信息------------
@@ -142,9 +124,10 @@ public class MoviesFragment extends Fragment {
         params.put("findMovie",sharedPreferences.getString("findMovie",""));
         params.put("status",sharedPreferences.getInt("status",300));
         JSONObject paramsJsonObject=new JSONObject(params);
-
         if (sharedPreferences.contains("findMovie")){
-            sharedPreferences.edit().remove("findMovie");
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.remove("findMovie");
+            editor.apply();
         }
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
@@ -153,15 +136,18 @@ public class MoviesFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {  //onResponse获取到服务器响应的值
                         try {
-                            //登录成功
+                            //查询成功
                             if (response.get("status").equals(200)) {
                                 urlMap = new HashMap<>();
                                 for(int i=0;i<(int)response.get("size");i++){
-                                    mList.add(new MovieInfo(response.getString("Movie_name"+i),
+                                    mList.add(new MovieInfo(response.getString("Movie_id"+i),response.getString("Movie_name"+i),
                                             response.getString("Movie_score"+i),
-                                            response.getString("Actor"+i)));
-                                    urlMap.put("iv_url"+i, (String) response.get("Image_url")+i);
+                                            response.getString("Actor"+i),response.getString("Image_url"+i)));
                                 }
+                            }
+                            //找不到数据
+                            if(response.get("status").equals(300)){
+                                Toast.makeText(getActivity(),response.getString("msg"), Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -191,36 +177,6 @@ public class MoviesFragment extends Fragment {
         //将创建的请求添加到请求队列中
         mQueue.add(jsonObjectRequest);
 
-
-//        //使用图片缓存工具类
-//        ImageLoader imageLoader = new ImageLoader(mQueue, new BitmapCache());
-//        if (urlMap != null) {
-//            //加载图片
-//
-//            String prex = "http://192.168.1.103:8080/movieshop_war_exploded/";
-//
-//            for (int i=0;i<mList.size();i++){
-//                String url = prex + urlMap.get("iv_url"+i);
-//                mList.get(i).setImageloader(new ImageLoader.getImageListener());
-//
-//                        ImageLoader.getImageListener(card_movie_img1,R.drawable.loading, R.drawable.loadfailure);
-//                mList.get(i).getImageloader().
-//            }
-//
-//            imageLoader.get(url0, imageListener1);
-//            //加载图片
-//            String url1 = prex + urlMap.get("iv_hot1");
-//            ImageLoader.ImageListener imageListener2 = ImageLoader.getImageListener(iv_hot1, R.drawable.loading, R.drawable.loadfailure);
-//            imageLoader.get(url1, imageListener2);
-//            //加载图片
-//            String url2 = prex + urlMap.get("iv_hot2");
-//            ImageLoader.ImageListener imageListener3 = ImageLoader.getImageListener(iv_hot2, R.drawable.loading, R.drawable.loadfailure);
-//            imageLoader.get(url2, imageListener3);
-//            //加载图片
-//            String url3 = prex + urlMap.get("iv_hot3");
-//            ImageLoader.ImageListener imageListener4 = ImageLoader.getImageListener(iv_hot3, R.drawable.loading, R.drawable.loadfailure);
-//            imageLoader.get(url3, imageListener4);
-//        }
     }
 }
 

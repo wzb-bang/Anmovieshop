@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             public void onResponse(JSONObject  response) {  //onResponse获取到服务器响应的值
                                 try {
                                     //打印信息
-                                    Toast.makeText(getApplicationContext(),(String)response.get("msg"), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(),response.getString("msg"), Toast.LENGTH_LONG).show();
                                     //登录成功
                                     if(response.get("status").equals(200)){
                                         //创建sharedPreferences对象,并保存用户登录状态、用户名、用户id

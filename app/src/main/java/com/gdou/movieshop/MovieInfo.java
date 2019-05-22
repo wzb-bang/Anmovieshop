@@ -1,27 +1,32 @@
 package com.gdou.movieshop;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.android.volley.toolbox.ImageLoader;
 
 public class MovieInfo {
+    protected String movie_id;
     protected String movie_name = "大侦探皮卡丘";
     protected String movie_score = "6.7";
     protected String actor = " 瑞恩·雷诺兹 / 贾斯蒂斯·史密斯 / 凯瑟琳·纽顿";
-    protected Drawable image;
-    protected ImageLoader.ImageListener imageloader;
-//    protected String bt_id;
+    protected String imageUrl="http://192.168.1.103:8080/movieshop_war_exploded/";
+
+
     protected static final String NAME_PREFIX = "";
     protected static final String SCORE_PREFIX = "评分：";
     protected static final String ACTOR_PREFIX = "主演：";
-//    protected static final String BT_ID_PREFIX = "bt_";
 
-    public MovieInfo(String movie_name, String movie_score, String actor){
+
+    public MovieInfo(String movie_id,String movie_name, String movie_score, String actor,String imageUrl){
+        this.movie_id=movie_id;
         this.movie_name = movie_name;
         this.movie_score = movie_score;
         this.actor = actor;
+        this.imageUrl+=imageUrl;
     }
 
 //    public String getBt_id() {
@@ -37,21 +42,22 @@ public class MovieInfo {
 //    }
 
 
-    public ImageLoader.ImageListener getImageloader() {
-        return imageloader;
+    public String getMovie_id() {
+        return movie_id;
     }
 
-    public void setImageloader(ImageLoader.ImageListener imageloader) {
-        this.imageloader = imageloader;
+    public void setMovie_id(String movie_id) {
+        this.movie_id = movie_id;
     }
 
-    public Drawable getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(Drawable image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
+
 
     public String getMovie_name() {
         return movie_name;
