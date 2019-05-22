@@ -11,10 +11,10 @@
         android:orientation="horizontal">
 
         <com.gdou.movieshop.view.CircleImageView
-            android:id="@+id/girls04"
+            android:id="@+id/icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@mipmap/natural_beauty_05"
+            android:src="@drawable/icon"
             android:layout_marginStart="10dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"

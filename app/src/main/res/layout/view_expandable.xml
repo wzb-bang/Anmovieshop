@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:textSize="16sp"
+        android:textColor="#FF3C3C3C"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/v_expansion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:background="@drawable/sel_text_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="16sp"
+        android:textColor="#FF576B95"
+        android:text="全文"/>
+
+</merge>

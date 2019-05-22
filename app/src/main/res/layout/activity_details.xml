@@ -2,45 +2,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:id="@+id/details_layout"
         android:layout_width="match_parent"
-        android:layout_height="170dp">
+        android:layout_height="200dp">
+
         <ImageView
             android:id="@+id/details_img"
             android:layout_width="120dp"
             android:layout_height="150dp"
-            android:src="@drawable/hot1"
-            android:layout_marginTop="10dp"/>
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/hot1" />
+
         <LinearLayout
             android:id="@+id/details_info"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/details_img"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/details_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:text="电影名"
-                android:textSize="20dp"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/details_actor"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="主演"
-                android:textSize="16dp"
-                android:textColor="@color/colorBlack"/>
-
-            <TextView
-                android:id="@+id/details_description"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:text="简介"
                 android:textColor="@color/colorBlack"
                 android:textSize="16dp" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/details_description"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:text="简介"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:textSize="16dp" />-->
+
+            <com.gdou.movieshop.ExpandableTextView
+                android:id="@+id/details_description"
+                android:layout_width="match_parent"
+                android:layout_height="110dp">
+
+            </com.gdou.movieshop.ExpandableTextView>
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout

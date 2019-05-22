@@ -38,7 +38,7 @@ public class DetailsActivity extends AppCompatActivity {
     private ImageView details_img;
     private TextView details_name;
     private TextView details_actor;
-    private TextView details_description;
+    private ExpandableTextView details_description;
     private Intent intent;
     private Context context;
     List<DetailsInfo> mList = new ArrayList<>();
@@ -97,6 +97,7 @@ public class DetailsActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {  //onResponse获取到服务器响应的值
                         try {
+                            ExpandableTextView details_description = findViewById(R.id.details_description);
                             //登录成功
                             if (response.get("status").equals(200)) {
                                 details_name.setText(response.getString("Movie_name"));
