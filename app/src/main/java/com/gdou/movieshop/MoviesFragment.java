@@ -131,7 +131,7 @@ public class MoviesFragment extends Fragment {
         }
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                "http://192.168.1.103:8080/movieshop_war_exploded/Movie/findMovieByName.action", paramsJsonObject,
+                "http://203.195.219.146:8080/movieshop/Movie/findMovieByName.action", paramsJsonObject,
                 new Response.Listener<JSONObject>() {       //volley监听器
                     @Override
                     public void onResponse(JSONObject response) {  //onResponse获取到服务器响应的值
