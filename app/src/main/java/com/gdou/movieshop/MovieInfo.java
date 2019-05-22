@@ -13,7 +13,7 @@ public class MovieInfo {
     protected String movie_name = "大侦探皮卡丘";
     protected String movie_score = "6.7";
     protected String actor = " 瑞恩·雷诺兹 / 贾斯蒂斯·史密斯 / 凯瑟琳·纽顿";
-    protected String imageUrl="http://192.168.1.103:8080/movieshop_war_exploded/";
+    protected String imageUrl="http://203.195.219.146:8080/movieshop/";
 
 
     protected static final String NAME_PREFIX = "";

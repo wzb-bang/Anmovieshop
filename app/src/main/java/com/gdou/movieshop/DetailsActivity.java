@@ -92,7 +92,7 @@ public class DetailsActivity extends AppCompatActivity {
 
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                "http://192.168.1.103:8080/movieshop_war_exploded/Movie/showMovieDetailByID.action", paramsJsonObject,
+                "http://203.195.219.146:8080/movieshop/Movie/showMovieDetailByID.action", paramsJsonObject,
                 new Response.Listener<JSONObject>() {       //volley监听器
                     @Override
                     public void onResponse(JSONObject response) {  //onResponse获取到服务器响应的值
@@ -102,7 +102,7 @@ public class DetailsActivity extends AppCompatActivity {
                                 details_name.setText(response.getString("Movie_name"));
                                 details_actor.setText(response.getString("Movie_actor"));
                                 details_description.setText(response.getString("Movie_details_description"));
-                                Glide.with(context).load("http://192.168.1.103:8080/movieshop_war_exploded/"+response.getString("Movie_image"))
+                                Glide.with(context).load("http://203.195.219.146:8080/movieshop/"+response.getString("Movie_image"))
                                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                                         .placeholder(R.drawable.loading)
                                         .into(details_img);

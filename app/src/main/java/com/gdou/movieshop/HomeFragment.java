@@ -134,7 +134,6 @@ public class HomeFragment extends Fragment {
         //创建请求队列
         RequestQueue mQueue = Volley.newRequestQueue(getActivity());
         //创建请求
-//        "http://192.168.1.103:8080/movieshop_war_exploded/User/LoadHomeView.action"
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 "http://203.195.219.146:8080/movieshop/User/LoadHomeView.action", null,
                 new Response.Listener<JSONObject>() {       //volley监听器
@@ -191,7 +190,6 @@ public class HomeFragment extends Fragment {
         ImageLoader imageLoader = new ImageLoader(mQueue, new BitmapCache());
         if (urlMap != null) {
             //加载图片
-//            String prex = "http://192.168.1.103:8080/movieshop_war_exploded/";
             String prex = "http://203.195.219.146:8080/movieshop/";
             String url0 = prex + urlMap.get("iv_AD");
             ImageLoader.ImageListener imageListener1 = ImageLoader.getImageListener(iv_AD, R.drawable.loading, R.drawable.loadfailure);
