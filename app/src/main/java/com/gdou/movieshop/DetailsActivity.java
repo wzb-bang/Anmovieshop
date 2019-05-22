@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.telecom.Call;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,6 +31,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 电影信息页面，包括电影、场次、票价等信息
+ * 及购票
+ */
 public class DetailsActivity extends AppCompatActivity {
     //类成员
     private DetailsAdapter adapter;

@@ -14,7 +14,10 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.graphics.Matrix;
 
-public class CircleImageView extends android.support.v7.widget.AppCompatImageView {
+/**
+ * 用户个人头像
+ */
+public class CircleImageView extends ImageView {
 
     //画笔
     private Paint mPaint;
