@@ -12,20 +12,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:alpha="0.8"
         android:background="#fafafa">
+
         <ImageView
             android:id="@+id/card_movie_img1"
             android:layout_width="120dp"
             android:layout_height="150dp"
-            android:src="@drawable/hot1"/>
+            android:src="@drawable/hot1" />
+
         <RelativeLayout
             android:id="@+id/movie_info"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="150dp"
             android:layout_toRightOf="@+id/card_movie_img1">
+
             <TextView
                 android:id="@+id/movie_name"
                 android:layout_width="match_parent"
@@ -58,6 +61,7 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="65dp"
             android:layout_height="150dp"
@@ -69,57 +73,58 @@
                 android:layout_height="35dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="0dp"
                 android:background="@drawable/shape"
+                android:padding="0dp"
                 android:text="购票"
                 android:textColor="@color/colorWhite" />
         </RelativeLayout>
         <!--<TextView-->
-            <!--android:id="@+id/title"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:background="#eceff1"-->
-            <!--android:paddingLeft="5dp"-->
-            <!--android:text="contact information"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="20sp" />-->
+        <!--android:id="@+id/title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#eceff1"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:text="contact information"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="20sp" />-->
 
         <!--<TextView-->
-            <!--android:id="@+id/text_name"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/title"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:padding="3dp"-->
-            <!--android:text="Name: "-->
-            <!--android:textColor="#2979ff"-->
-            <!--android:textSize="12sp" />-->
+        <!--android:id="@+id/text_name"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/title"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:padding="3dp"-->
+        <!--android:text="Name: "-->
+        <!--android:textColor="#2979ff"-->
+        <!--android:textSize="12sp" />-->
 
         <!--<TextView-->
-            <!--android:id="@+id/text_surname"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/text_name"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:padding="3dp"-->
-            <!--android:text="Surname: "-->
-            <!--android:textColor="#2979ff"-->
-            <!--android:textSize="12sp" />-->
+        <!--android:id="@+id/text_surname"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/text_name"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:padding="3dp"-->
+        <!--android:text="Surname: "-->
+        <!--android:textColor="#2979ff"-->
+        <!--android:textSize="12sp" />-->
 
         <!--<TextView-->
-            <!--android:id="@+id/text_email"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignBaseline="@id/text_name"-->
-            <!--android:layout_alignParentLeft="true"-->
-            <!--android:layout_marginLeft="170dp"-->
-            <!--android:padding="3dp"-->
-            <!--android:text="Email: "-->
-            <!--android:textColor="#2979ff"-->
-            <!--android:textSize="12sp" />-->
+        <!--android:id="@+id/text_email"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBaseline="@id/text_name"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_marginLeft="170dp"-->
+        <!--android:padding="3dp"-->
+        <!--android:text="Email: "-->
+        <!--android:textColor="#2979ff"-->
+        <!--android:textSize="12sp" />-->
 
     </RelativeLayout>
 

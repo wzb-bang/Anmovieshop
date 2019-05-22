@@ -89,11 +89,13 @@
             android:layout_marginStart="35dp"
             android:layout_width="70dp"
             android:layout_height="35dp"
+            android:padding="0dp"
             android:textColor="@color/colorWhite"
             android:background="@drawable/shape"/>
             <Button
             android:id="@+id/btn_buy2"
             android:text="购票"
+            android:padding="0dp"
             android:layout_marginStart="60dp"
             android:layout_width="70dp"
             android:layout_height="35dp"
@@ -102,6 +104,7 @@
             <Button
             android:id="@+id/btn_buy3"
             android:text="购票"
+            android:padding="0dp"
             android:layout_marginStart="55dp"
             android:layout_width="70dp"
             android:layout_height="35dp"
