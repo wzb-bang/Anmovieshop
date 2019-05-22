@@ -35,22 +35,22 @@ public class MyFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.my_fragment, container, false);
 
-        // ArrayAdapter的参数1是一个context，代表要生成ListView的上下文
-        // 参数2要传入的是一个布局文件id值，这里使用google预置的布局文件
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
-
-        ListView lvDemo = (ListView)view.findViewById(R.id.listview);
-        lvDemo.setAdapter(adapter);
-
-        // 添加数据
-        for(int i = 0; i < 1; i++){
-            adapter.add("退出登陆 " + String.valueOf(i));
-        }
-
-        Bundle bundle = getArguments();
-        String agrs1 = bundle.getString("agrs1");
-        TextView tv = (TextView)view.findViewById(R.id.container);
-        tv.setText(agrs1);
+//        // ArrayAdapter的参数1是一个context，代表要生成ListView的上下文
+//        // 参数2要传入的是一个布局文件id值，这里使用google预置的布局文件
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
+//
+//        ListView lvDemo = (ListView)view.findViewById(R.id.listview);
+//        lvDemo.setAdapter(adapter);
+//
+//        // 添加数据
+//        for(int i = 0; i < 1; i++){
+//            adapter.add("退出登陆 " + String.valueOf(i));
+//        }
+//
+//        Bundle bundle = getArguments();
+//        String agrs1 = bundle.getString("agrs1");
+//        TextView tv = (TextView)view.findViewById(R.id.container);
+//        tv.setText(agrs1);
 
         return view;
     }

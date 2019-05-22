@@ -87,8 +87,6 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.ContactVi
         public int getItemCount() {
             return MovieInfoList.size();
         }
-
-
     class ContactViewHolder extends RecyclerView.ViewHolder {
         //create the viewHolder class
         protected TextView vName;
